@@ -30,7 +30,7 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
 - Upgrade
     
     ```bash
-    ph-avell:~$ sudo apt upgrade
+     sudo apt upgrade
     ```
 
 # Graphic Cards
@@ -38,7 +38,7 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
 - Nvidia drivers and Intel UHD graphics
     
     ```bash
-    ph-avell:~$ sudo apt install nvidia-driver firmware-misc-nonfree
+     sudo apt install nvidia-driver firmware-misc-nonfree
     ```
     
 
@@ -62,9 +62,9 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
         ```bash
         # If you don't have pipx just install with 
         # $ apt install pipx
-        ph-avell:~$ sudo pipx install avell-unofficial-control-center
+         sudo pipx install avell-unofficial-control-center
         
-        ph-avell:~$ sudo pipx ensurepath
+         sudo pipx ensurepath
         ```
         
     - Merge Pull Request 76
@@ -115,11 +115,11 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
 - Keyboard LEDs
     
     ```bash
-    ph-avell:~$ aucc -l
+     aucc -l
     [1] device #1 vendor=1165, product=24587
     [2] device #2 vendor=1165, product=28673
     
-    ph-avell:~$ aucc --help
+     aucc --help
     usage: aucc [-h] (-l | -c COLOR | -H COLOR COLOR | -V COLOR COLOR | -s STYLE | -d) [-v VENDOR] [-p PRODUCT] [-D DEVICE] [-b {1,2,3,4}] [--speed {1,2,3,4,5,6,7,8,9,10}]
     
     Colors available:
@@ -151,26 +151,26 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
                             Set style speed. 1 is fastest. 10 is slowest
     
     # Set Keyboard LEDs Green 
-    ph-avell:~$ aucc -D 1 -c green
+     aucc -D 1 -c green
     
     # Set Keyboard LEDs Blue 
-    ph-avell:~$ aucc -D 1 -c blue
+     aucc -D 1 -c blue
     
     # Disable Backlight LED
-    ph-avell:~$ aucc -D 2 -d
+     aucc -D 2 -d
     ```
     
 - Creating a service
     - Symbolic link
         
         ```bash
-        ph-avell:~$ sudo ln -s ~/.local/bin/aucc /usr/local/bin/aucc
+         sudo ln -s ~/.local/bin/aucc /usr/local/bin/aucc
         ```
         
     - aucc.service file
         
         ```bash
-        ph-avell:~$ cat /etc/systemd/system/aucc.service 
+         cat /etc/systemd/system/aucc.service 
         [Unit]
         Description=Avell Unofficial Control Center
         After=network.target
