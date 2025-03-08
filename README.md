@@ -62,9 +62,9 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
         ```bash
         # If you don't have pipx just install with 
         # $ apt install pipx
-        sudo pipx install avell-unofficial-control-center
+        pipx install avell-unofficial-control-center
         
-        sudo pipx ensurepath
+        pipx ensurepath
         ```
         
     - Merge Pull Request 76
@@ -107,9 +107,9 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
     - Copy modified files
         
         ```bash
-        ph-avell:~/Downloads/avell-unofficial-control-center$ cp -v aucc/core/handler.py ~/.local/pipx/venvs/avell-unofficial-control-center/lib/python3.11/site-packages/aucc/core/handler.py
+        cp -v aucc/core/handler.py ~/.local/pipx/venvs/avell-unofficial-control-center/lib/python3.11/site-packages/aucc/core/handler.py
         
-        ph-avell:~/Downloads/avell-unofficial-control-center$ cp -v aucc/main.py ~/.local/pipx/venvs/avell-unofficial-control-center/lib/python3.11/site-packages/aucc/main.py
+        cp -v aucc/main.py ~/.local/pipx/venvs/avell-unofficial-control-center/lib/python3.11/site-packages/aucc/main.py
         ```
         
 - Keyboard LEDs
@@ -176,6 +176,7 @@ tutorial to install and setting Debian on your Avell Sotrm 470 Black
         After=network.target
         
         [Service]
+        ExecStartPre=/usr/local/bin/aucc -D 2 -d
         ExecStart=/usr/local/bin/aucc -D 1 -c green
         Restart=always
         User=root
